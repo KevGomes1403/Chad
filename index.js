@@ -19,12 +19,6 @@ bot.on("ready", async () => {
   bot.user.setActivity("with hearts", {type: 'Playing'});
 });
 
-bot.on ("guildMemberAdd", member => {
-  const channel = member.guild.channels.find(ch => ch.name === "off-topic");
-  if (!channel) { return; }
-  channel.send('${member} has succumbed to the greatest regime in existence');
-});
-
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
@@ -46,6 +40,7 @@ bot.on("message", async message => {
   if (command.args && !args.length) {
     return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
   }
+
 
   try {
     command.execute(message, args);
