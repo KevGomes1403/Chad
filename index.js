@@ -41,74 +41,12 @@ bot.on("message", async message => {
     return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
   }
 
-
   try {
     command.execute(message, args);
   } catch(error) {
     console.error(error);
     message.reply('there was an error trying to execute that command');
   }
-
-
-
-
-  /*
-  if (args[0] === `botinfo`) {
-    let bicon = bot.user.displayAvatarURL;
-    let botembed = new Discord.RichEmbed()
-    .setDescription("Bot Information")
-    .setColor("#00ffdd")
-    .setThumbnail(bicon)
-    .addField("Bot Name", bot.user.username)
-    .addField("Created On", bot.user.createdAt)
-
-    message.channel.send(botembed);
-  }
-
-  if (cmd === `${prefix}ping`) {
-    client.commands.get('ping').execute(message, agrs);
-  }
-
-
-
-
-
-
-  Real business begins here
-
-  if (cmd === `${prefix}greet`) {
-    if (messageArray[1] === 'me') {
-      message.channel.sendMessage('Hey there');
-    } else {
-      message.channel.sendMessage("See ya");
-    }
-  }
-
-  // Profanity filter
-  if (message.content.match('frick') || message.content.match('suck') ||
-      message.content.match('fuck') || message.content.match('shit')) {
-    message.channel.sendMessage("Hey no cursing");
-  }
-
-  if (message.content.toLowerCase().match('nigga')) {
-    let emoji = message.guild.emojis.find('name', 'gulag');
-    message.react(emoji);
-  }
-
-
-  if (cmd === `${prefix}fetch`) {
-    channel.messages.fetch()
-      .then(message => messages.channel.sendMessage(`${messages.filter(m => m.author.id ===
-      '706559181045497907').size} messages`))
-      .catch(console.error);
-  }
-
-  */
-
 });
-
-function nwordSearch() {
-  // To be worked on
-}
 
 bot.login(botconfig.token);

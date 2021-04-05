@@ -1,0 +1,15 @@
+{
+  "name": "test-bot",
+  "version": "1.0.0",
+  "description": "First bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Gomes",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "discord.js": "^11.4.2"
+  }
+}
